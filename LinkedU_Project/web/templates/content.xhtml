@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<link rel="stylesheet" type="text/css" href="#{resource['css:leoAppStyle.css']}" />
+	<title>
+		<ui:insert name="title">Leo Petrucci - A3 Web App </ui:insert>
+	</title>
+</head>
+<body>
+<!-- All (header, footer and content) are united here by this file, which is
+	summarily included in home.html. See home.xhtml, indeed, see what is
+	displayed in the rendered page, for the full explanation.
+  -->
+<div id="header">
+  <ui:insert name="header">
+    <ui:include src="header.xhtml"/>
+  </ui:insert>
+</div>
+
+<table width="100%">
+<tr>
+  <td class="sidemenu" width="15%">
+    <div id="sidemenu">
+      <br />
+      <ui:insert name="sidemenu">
+    
+          <h:link outcome="index" value="Home"></h:link>
+          <br />
+          <br />
+          <h:link outcome="products" value="Products"></h:link>
+          <br />
+          <br />
+          <h:link outcome="contactUs" value="Contact Us"></h:link>
+          <br />
+          <br />
+     
+      </ui:insert>
+    </div>
+  </td>
+  <td width="85%">
+    <ui:insert name="content">
+      Content displayed from Template... This text is never
+      included, but only the text enclosed in the "ui:define"
+      element of the template client or consumer (in this case
+      home.xhtml).
+    </ui:insert>
+  </td>
+</tr>
+</table>
+  
+
+<div id="footer">  
+    <ui:insert name="footer">
+        <ui:include src="footer.xhtml" />
+    </ui:insert>
+</div>
+</body>
+</html>

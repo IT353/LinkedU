@@ -1,0 +1,77 @@
+/* 
+    Created on : Oct 20, 2014, 4:53:42 PM
+    Author     : ljpetr2
+*/
+html { font-family: Helvetica; 
+       background-color:#E0E0E0; }
+h1 {
+	font-family: Trebuchet MS;
+	color: #003366;	
+}
+
+h3 {
+	color: #003366;
+}
+body { width: 750px;
+       background: #E0E0E0;}
+#header
+{
+	width:				100%;
+	font-size:			30px;
+	font-weight:		bold;
+	line-height:		48px;
+	background-color:	#003366;
+	color:				white;
+}
+#footer
+{
+	width:			100%;
+	font-weight:		bold;
+	background-color:	#003366;
+	color:			white;
+        line-height:		20px;
+        text-align:		right;
+	vertical-align:		top;
+}
+#footer a:link {
+    color: white;
+    text-decoration: underline;	
+}
+#footer a:visited {
+    text-decoration: underline;
+    color: white;
+}
+#footer a:active {
+    text-decoration: underline;	
+}
+
+
+.sidemenu
+{
+	text-align:		center;
+	vertical-align:		top;
+	background-color:	#D8D8D8;
+        font-weight:		bold;
+}
+
+.sidemenu a:link {
+    text-decoration: none;
+	color: #003366;
+}
+.sidemenu a:visited {
+    text-decoration: none;
+	color: #003366;
+}
+.sidemenu a:hover {
+    text-decoration: none;
+	color: white;
+	background-color: #003366;
+}
+.sidemenu a:active {
+    text-decoration: underline;
+	color: #FFFFFF;
+	background-color: #003366;	
+}
+
+
+.indent { margin-left: 20px; }

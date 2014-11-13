@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+				"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   
+<body>
+<!-- This file is merely included by content.xhml. -->
+<div id="footer">
+        <h:form>
+            
+  <script>
+    if(#{loginController.getLog()} == 1) 
+        document.getElementById("in").innerHTML = "Logged In"; 
+    
+    else 
+        document.getElementById("footer").innerHTML ="Not Logged In &nbsp;&nbsp;&nbsp;&nbsp;";  
+  </script>
+       
+            <h:link outcome="update" value="Update"></h:link>
+            |
+            <h:commandLink action ="#{loginController.logOut()}" value="Logout"></h:commandLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </h:form> 
+</div>
+</body>
+</html>
+
