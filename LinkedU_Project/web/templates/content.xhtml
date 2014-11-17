@@ -6,7 +6,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="#{resource['css:leoAppStyle.css']}" />
 	<title>
-		<ui:insert name="title">Leo Petrucci - A3 Web App </ui:insert>
+		<ui:insert name="title">LinkedU </ui:insert>
 	</title>
 </head>
 <body>
@@ -19,27 +19,15 @@
     <ui:include src="header.xhtml"/>
   </ui:insert>
 </div>
+  
+<div id="bar">
+  <ui:insert name="loginBar">
+    <ui:include src="loginBar.xhtml"/>
+  </ui:insert>
+</div>
 
 <table width="100%">
 <tr>
-  <td class="sidemenu" width="15%">
-    <div id="sidemenu">
-      <br />
-      <ui:insert name="sidemenu">
-    
-          <h:link outcome="index" value="Home"></h:link>
-          <br />
-          <br />
-          <h:link outcome="products" value="Products"></h:link>
-          <br />
-          <br />
-          <h:link outcome="contactUs" value="Contact Us"></h:link>
-          <br />
-          <br />
-     
-      </ui:insert>
-    </div>
-  </td>
   <td width="85%">
     <ui:insert name="content">
       Content displayed from Template... This text is never

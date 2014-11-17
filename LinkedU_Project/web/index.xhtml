@@ -8,7 +8,7 @@
 
   <ui:composition template="/templates/content.xhtml">
     <ui:define name="content"> 
-        <f:event listener="#{loginController.logStatusMain}" type="preRenderView" />
+        <f:event listener="#{loginController.logStatusIn}" type="preRenderView" />
         
         <div class="indent">
             
@@ -19,21 +19,19 @@
       <p>Please login to an existing account or make a new one.</p>
       
       <table width= "100%" >
-          <TH style="border-right: solid"><b>Login</b><br></br>
+          <TH style="border-right: solid"><b>Student Sign Up</b><br></br>
               <br></br>
-              <h:link outcome="login" value=" Go To Login Page"></h:link>
+              <h:link outcome="signUpS" value=" Sign Up for Sudent"></h:link>
           </TH>
           
-          <TH><b>Sign Up</b><br></br>
+          <TH><b>University Sign Up</b><br></br>
               <br></br>
-              <h:link outcome="signUp" value=" Go To Sign Up Page"></h:link>
+              <h:link outcome="signUpU" value=" Sign Up for University"></h:link>
           
           </TH>
       </table> 
       
       <p style="visibility: hidden">#{loginController.setResponse("")}</p>
-      <p style="visibility: hidden">#{updateController.setUpdateStatus("")}</p>
-      <p style="visibility: hidden">#{signUpController.setResponse("")}</p>
         
       </div>
     </ui:define>

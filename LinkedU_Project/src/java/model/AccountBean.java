@@ -11,44 +11,31 @@ package model;
  * @author ljpetr2
  */
 public class AccountBean {
-    private String username;
+    private String userEmail;
     private String password;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String secQ;
-    private String secA;
-    private String interests;
-    private int login;
-    
+    private String accountType;
     
     public AccountBean(){
     }
     
-    public AccountBean(String username, String password, String firstName, String lastName, String email, String secQ, String secA, String interests, int login){
-        this.username = username;
+    public AccountBean(String userEmail, String password, String accountType){
+        this.userEmail = userEmail;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.secQ = secQ;
-        this.secA = secA;
-        this.interests = interests;
-        this.login = login;
+        this.accountType = accountType;
     }
 
     /**
-     * @return the username
+     * @return the userEmail
      */
-    public String getUsername() {
-        return username;
+    public String getUserEmail() {
+        return userEmail;
     }
 
     /**
-     * @param username the username to set
+     * @param userEmail the userEmail to set
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     /**
@@ -66,101 +53,18 @@ public class AccountBean {
     }
 
     /**
-     * @return the firstName
+     * @return the accountType
      */
-    public String getFirstName() {
-        return firstName;
+    public String getAccountType() {
+        return accountType;
     }
 
     /**
-     * @param firstName the firstName to set
+     * @param accountType the accountType to set
      */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
-
-    /**
-     * @return the lastName
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * @param lastName the lastName to set
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the secQ
-     */
-    public String getSecQ() {
-        return secQ;
-    }
-
-    /**
-     * @param secQ the secQ to set
-     */
-    public void setSecQ(String secQ) {
-        this.secQ = secQ;
-    }
-
-    /**
-     * @return the secA
-     */
-    public String getSecA() {
-        return secA;
-    }
-
-    /**
-     * @param secA the secA to set
-     */
-    public void setSecA(String secA) {
-        this.secA = secA;
-    }
-
-    /**
-     * @return the login
-     */
-    public int getLogin() {
-        return login;
-    }
-
-    /**
-     * @param login the login to set
-     */
-    public void setLogin(int login) {
-        this.login = login;
-    }
-
-    /**
-     * @return the interests
-     */
-    public String getInterests() {
-        return interests;
-    }
-
-    /**
-     * @param interests the interests to set
-     */
-    public void setInterests(String interests) {
-        this.interests = interests;
-    }
+    
 }
 

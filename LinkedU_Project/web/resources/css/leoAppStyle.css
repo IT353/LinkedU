@@ -12,16 +12,46 @@ h1 {
 h3 {
 	color: #003366;
 }
-body { width: 80%;
-       background: #E0E0E0;}
+body {  width: 95%;
+        vertical-align: top;
+        background: #E0E0E0;
+        margin-left: 10px;
+        margin-right: 10px;
+}
+
 #header
 {
-	width:				100%;
-	font-size:			30px;
-	font-weight:		bold;
-	line-height:		48px;
+	width:			100%;
+	line-height:		44px;
 	background-color:	#003366;
-	color:				white;
+	color:                  white;  
+        padding-left:           10px;
+        padding-right:           10px;
+}
+
+#bar
+{
+	width:			100%;
+	line-height:		20px;
+	background-color:	#D8D8D8;
+        text-align:		right;
+	color:                  #003366;
+        padding-right:          10px;
+        padding-left:           10px;
+        font-weight:		bold;
+        
+}
+#barIn
+{
+	width:			100%;
+	line-height:		20px;
+	background-color:	#D8D8D8;
+        text-align:		right;
+	color:                  #003366;
+        padding-right:          10px;
+        padding-left:           10px;
+        font-weight:		bold;
+        
 }
 #footer
 {
@@ -32,6 +62,7 @@ body { width: 80%;
         line-height:		20px;
         text-align:		right;
 	vertical-align:		top;
+        padding-right:          10px;
 }
 #footer a:link {
     color: white;
@@ -46,32 +77,42 @@ body { width: 80%;
 }
 
 
-.sidemenu
+.topmenu
 {
-	text-align:		center;
-	vertical-align:		top;
+        margin-left: 10px;
+        margin-right : 10px;
 	background-color:	#D8D8D8;
-        font-weight:		bold;
 }
 
-.sidemenu a:link {
+.topmenu a:link {
     text-decoration: none;
 	color: #003366;
 }
-.sidemenu a:visited {
+.topmenu a:visited {
     text-decoration: none;
 	color: #003366;
 }
-.sidemenu a:hover {
+.topmenu a:hover {
     text-decoration: none;
 	color: white;
 	background-color: #003366;
 }
-.sidemenu a:active {
+.topmenu a:active {
     text-decoration: underline;
 	color: #FFFFFF;
 	background-color: #003366;	
 }
 
 
-.indent { margin-left: 20px; }
+.indent { margin-left: 25px;}
+
+.title{
+        font-size:		30px;
+	font-weight:		bold;
+        text-align:             left;  
+}
+
+.logControls {
+    text-align: right;
+    text-align: right;
+}

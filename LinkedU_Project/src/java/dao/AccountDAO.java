@@ -13,10 +13,7 @@ import model.AccountBean;
  */
 public interface AccountDAO {
     public int createAccount(AccountBean aAccount);
-    public ArrayList findAll();
-    public ArrayList findAccount(String aName, String aPass);
-    public ArrayList findByName(String aName); // either get one back or several if multiple same name allowed  
-    public int updateAccount(AccountBean pro);  
-    public int login(AccountBean pro);
-    public int logout(AccountBean pro);
+    public ArrayList findAllAccounts(); //returns all from LoginInfo table
+    public ArrayList findAccount(String aEmail, String aPass);  //finds an account from LoginInfo, exact result 
+    public int updateAccount(AccountBean pro);
 }
