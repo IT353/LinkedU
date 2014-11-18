@@ -117,7 +117,7 @@ public class UserController {
         multipart.addBodyPart(messageBodyPart);  
           
         messageBodyPart = new MimeBodyPart();  
-        DataSource fds = new FileDataSource("H:\\Assign3\\ISUlogo.png");  
+        DataSource fds = new FileDataSource("H:\\Assign3\\ISUlogo.png"); //Change ths picture to LinkedU!! 
         messageBodyPart.setDataHandler(new DataHandler(fds));  
         messageBodyPart.setHeader("Content-ID","<image>");  
   
@@ -130,7 +130,7 @@ public class UserController {
            mex.printStackTrace();
         }
         
-            return "profile.xhtml"; 
+            return "studentProfile.xhtml"; 
         }
         else
             return "error.xhtml"; 
