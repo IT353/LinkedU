@@ -12,17 +12,13 @@
     -->
 
     <head>
-        <link rel="stylesheet" type="text/css" href="#{resource['css:leoAppStyle.css']}" />
         <title>
             <ui:insert name="title">Facelets Templating Example</ui:insert>
         </title>
     </head>
 
-    <div id="header">
-        <ui:insert name="header">
-            <ui:include src="/templates/header.xhtml"/>
-        </ui:insert>
-    </div>
+<ui:composition template="/templates/content.xhtml">
+    <ui:define name="content"> 
 
     <table width="100%">
         <tr>
@@ -32,23 +28,8 @@
                         "content.xhtml." In this example the side menu is considered part
                         of the content. Whether it is or should be is debatable, of course.
                 -->
-                <div id="sidemenu">
-                    <br />
-                    <ui:insert name="sidemenu">
-                        <h:form>
-                            <h:commandLink action="/home.xhtml" value="Home"></h:commandLink>
-                            <br />
-                            <B><h:outputText styleClass="selected" value="Student Sign Up" /></B>
-                            <br />
-                            <h:commandLink action="/universitySignUp.xhtml" value="University Sign Up"></h:commandLink>
-                            <br />
-                            <br />
-                        </h:form>
-                    </ui:insert>
-                </div>
             </td>
             <td width="85%">
-                <ui:insert name="content">
                     <h2>Welcome to the Student Sign Up page!</h2>
 
                     <div>   
@@ -98,16 +79,10 @@
                             <h:commandButton id="submitID" value="Create Profile" action="#{userController.createUser()}"/>
                         </h:form>
                     </div>  
-
-                </ui:insert>
             </td>
         </tr>
     </table>
-
-    <div id="footer">
-        <ui:insert name="footer">
-            <ui:include src="/templates/footer.xhtml"/>
-        </ui:insert>
-    </div>
+    </ui:define>
+ </ui:composition>
 
 </html>
