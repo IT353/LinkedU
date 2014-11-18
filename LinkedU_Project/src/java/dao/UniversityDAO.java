@@ -14,7 +14,7 @@ import model.UserBean;
 public interface UniversityDAO {
     
     public int createUniversity(UniversityBean aUniversity);
-    public UserBean[] findAll();
-    public UserBean findByUniversity(String aUniversity);   
+    public UniversityBean[] findAll();
+    public UniversityBean findByUniversity(String aUniversity);   
     public int updateUniversity(UniversityBean aUniversity); 
 }

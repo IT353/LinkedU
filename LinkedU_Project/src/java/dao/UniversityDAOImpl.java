@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import model.UniversityBean;
-import model.UserBean;
 
 /**
  *
@@ -57,14 +56,14 @@ public class UniversityDAOImpl implements UniversityDAO {
     }
 
     @Override
-    public UserBean[] findAll() {
+    public UniversityBean[] findAll() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
     @Override
-    public UserBean findByUniversity(String aUniversity) {
+    public UniversityBean findByUniversity(String aUniversity) {
         ResultSet rs = null;
-        UserBean temp = null;
+        UniversityBean temp = null;
         try {
             String myDB = "jdbc:derby://localhost:1527/Project_353";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
@@ -75,7 +74,7 @@ public class UniversityDAOImpl implements UniversityDAO {
             rs = stmt.executeQuery(searchString);
             if (rs.next()){
                 String input = "";
-                temp = new UniversityBean (rs.getString(1),rs.getString(2),rs.getString(3), 
+                temp = new UniversityBean(rs.getString(1),rs.getString(2),rs.getString(3), 
                         rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), 
                         rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11),
                         rs.getString(12));
