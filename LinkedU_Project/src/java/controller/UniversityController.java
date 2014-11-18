@@ -4,19 +4,14 @@
  */
 package controller;
 
-import dao.UserDAO;
-import dao.UserDAOImpl;
+import dao.UniversityDAO;
+import dao.UniversityDAOImpl;
 import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.component.UIInput;
-import javax.faces.context.FacesContext;
-import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Named;
 import javax.mail.BodyPart;
 import javax.mail.Message;
@@ -27,6 +22,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import model.UniversityBean;
 import model.UserBean;
 
 /**
@@ -34,34 +30,34 @@ import model.UserBean;
  * @author admin
  */
 
-@Named(value = "userController")
+@Named(value = "universityController")
 @ManagedBean
 @SessionScoped
-public class UserController {
+public class UniversityController {
 
     // This corresponds to the response to be sent back to the client
     private String response;
-    private UserBean theModel;
+    private UniversityBean theModel;
 
     /**
      * Creates a new instance of ProfileController
      */
-    public UserController() {
-        theModel = new UserBean();
+    public UniversityController() {
+        theModel = new UniversityBean();
     }
     
-    public UserBean getTheModel() {
+    public UniversityBean getTheModel() {
         return theModel;
     }
 
-    public void setTheModel(UserBean theModel) {
+    public void setTheModel(UniversityBean theModel) {
         this.theModel = theModel;
     }
 
     public String getResponse() {  
         String resultStr = "";
-        resultStr += "Hello " +theModel.getFullName() +
-                "</br></br>Info inserted in DB: </br>Full Name - "+ theModel.getFullName()+ 
+        resultStr += "Hello " +theModel.getUnName() +
+                "</br></br>Info inserted in DB: </br>University - "+ theModel.getUnName()+ 
                 "</br> Password - "+ theModel.getPassword()+ 
                 "</br> Email - "+ theModel.getEmail();
         response = resultStr;
@@ -71,9 +67,9 @@ public class UserController {
     public void setResponse(String response) {
         this.response = response;
     }
-    public String createUser() {
-        UserDAO aUserDAO = new UserDAOImpl();    // Creating a new object each time.
-        int status = aUserDAO.createUser(theModel); // Doing anything with the object after this?
+    public String createUniversity() {
+        UniversityDAO aUniversityDAO = new UniversityDAOImpl();    // Creating a new object each time.
+        int status = aUniversityDAO.createUniversity(theModel); // Doing anything with the object after this?
         if (status == 1){
             
        String to = theModel.getEmail();
@@ -106,9 +102,8 @@ public class UserController {
      
         MimeMultipart multipart = new MimeMultipart("related");  
   
-
         BodyPart messageBodyPart = new MimeBodyPart();  
-        String htmlText = "<H1>Hello "+ theModel.getFullName()+ 
+        String htmlText = "<H1>Hello "+ theModel.getUnName()+ 
                 ". Thank you for registering. Your username is: "+ theModel.getEmail() +
                 "Your password is: " + theModel.getPassword()+". ";  
         messageBodyPart.setContent(htmlText, "text/html");  
@@ -117,7 +112,7 @@ public class UserController {
         multipart.addBodyPart(messageBodyPart);  
           
         messageBodyPart = new MimeBodyPart();  
-        DataSource fds = new FileDataSource("H:\\Assign3\\ISUlogo.png"); //Change ths picture to LinkedU!! 
+        DataSource fds = new FileDataSource("H:\\Assign3\\ISUlogo.png");  //Change picture to LinkedU!!!
         messageBodyPart.setDataHandler(new DataHandler(fds));  
         messageBodyPart.setHeader("Content-ID","<image>");  
   
@@ -130,7 +125,7 @@ public class UserController {
            mex.printStackTrace();
         }
         
-            return "studentProfile.xhtml"; 
+            return "universityProfile.xhtml"; 
         }
         else
             return "error.xhtml"; 

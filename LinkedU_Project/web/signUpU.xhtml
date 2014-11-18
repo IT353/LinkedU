@@ -1,16 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <!-- See content.xhtml for an explanation of how templating works in this application.
+            According to some explanations, this is the "template client." A better name might
+            be "consumer."
+    -->
+
     <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>
+            <ui:insert name="title">Facelets Templating Example</ui:insert>
+        </title>
     </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+
+    <ui:composition template="/templates/content.xhtml">
+        <ui:define name="content"> 
+
+            <table width="100%">
+                <tr>
+                    <td class="sidemenu" width="20%">
+                        <!-- This demonstrates that the entire content region of the displayed
+                                page is controlled in this file which is why we titled this file,
+                                "content.xhtml." In this example the side menu is considered part
+                                of the content. Whether it is or should be is debatable, of course.
+                        -->
+                    </td>
+                    <td width="85%">
+                            <h2>Welcome to the University Sign Up page!</h2>
+
+                            <div>   
+                                <h:form>
+
+                                    <h3> About: </h3>
+                                    *University Name: <h:inputText id="dob" value="#{universityController.theModel.unName}">
+                                        <f:validateLength minimum="1"/>
+                                    </h:inputText> <br/><br/>
+                                    <!-- Validate that there is not one already created for this school-->
+                                    *Address: (street city state, zip) <h:inputText id="address" value="#{universityController.theModel.address}">
+                                        <f:validateLength minimum="10" />
+                                        <!-- Should I set up a validate for this formatting?-->
+                                    </h:inputText> <br/><br/>
+                                    *Number of Students: <h:inputText id="stuNum" value="#{universityController.theModel.stuNum}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+                                    *In-State Tuition: <h:inputText id="inTuition" value="#{universityController.theModel.inTuition}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+                                    *Out-of-State Tuition: <h:inputText id="outTuition" value="#{universityController.theModel.outTuition}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+
+                                    <hr></hr>
+
+                                    <h3> Requirements: </h3>
+                                    *GPA Range: <h:inputText id="gpaRange" value="#{universityController.theModel.gpaRange}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+                                    *ACT Range: <h:inputText id="actRange" value="#{universityController.theModel.actRange}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+                                    *SAT Range: <h:inputText id="satRange" value="#{universityController.theModel.satRange}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+
+                                    <hr></hr>
+
+                                    <h3>Contact Information: </h3>                                          
+                                    *Full Name: <h:inputText id="firstName" value="#{universityController.theModel.fullName}">
+                                        <f:validateLength minimum="3" maximum="50" />
+                                    </h:inputText> <br/><br/>
+                                    *Affiliation With University: <h:inputText id="affiliation" value="#{universityController.theModel.affiliation}">
+                                        <f:validateLength minimum="1" />
+                                    </h:inputText> <br/><br/>
+                                    *Email Address: <h:inputText id="email" value="#{universityController.theModel.email}">
+                                        <f:validateLength minimum="1" />
+                                    </h:inputText> <br/><br/>
+                                    *Password: <h:inputSecret id="password" value="#{universityController.theModel.password}">
+                                        <f:validateLength minimum="1"/>
+                                    </h:inputSecret> <br/><br/>
+                                    <!--            <h:commandButton id="submitID" value="Submit" action="response.xhtml"/>-->
+                                    <h:commandButton id="submitID" value="Create Profile" action="#{universityController.createUniversity()}"/>
+                                </h:form>
+                            </div>  
+                    </td>
+                </tr>
+            </table>
+        </ui:define>
+    </ui:composition>
+
 </html>

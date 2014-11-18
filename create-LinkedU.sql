@@ -3,7 +3,7 @@ CREATE TABLE LinkedU.LoginInfo (
 	Password		VARCHAR(25) NOT NULL,
 	AccountType		CHAR(1) NOT NULL,
 	CONSTRAINT LinkedU.LoginInfo_UserID_pk PRIMARY KEY(UserEmail)
-)
+);
 
 CREATE TABLE LinkedU.Students (
 	UserEmail		VARCHAR(25),
@@ -22,7 +22,7 @@ CREATE TABLE LinkedU.Students (
 	Picture			BLOB,
 	Essay			BLOB,
 	Video			BLOB
-)
+);
 
 CREATE TABLE LinkedU.Universities (
 	UserEmail		VARCHAR(25),
@@ -37,7 +37,7 @@ CREATE TABLE LinkedU.Universities (
 	ApplyExtra		LONG VARCHAR,
 	Picture			BLOB,
 	Video			BLOB
-)
+);
 
 
 CREATE TABLE LinkedU.Messages(
@@ -46,5 +46,5 @@ CREATE TABLE LinkedU.Messages(
 	Message			LONG VARCHAR,
 	TimeSent		TIMESTAMP,
 	ReadStatus		CHAR(1)
-)
+);
 	
