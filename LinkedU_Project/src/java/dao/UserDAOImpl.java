@@ -34,13 +34,13 @@ public class UserDAOImpl implements UserDAO {
             String insertString;
             Statement stmt = DBConn.createStatement();
             insertString = "INSERT INTO Project_353.Users VALUES ('"
-                    + aUser.getFullName()
+                    + aUser.getFName()
                     + "','" + aUser.getPassword()
                     + "','" + aUser.getEmail()
                     + "')";
             rowCount = stmt.executeUpdate(insertString);
             insertString = "INSERT INTO Project_353.Logininfo VALUES ('"
-                    + aUser.getFullName()
+                    + aUser.getFName()
                     + "','" + aUser.getPassword()
                     + "')";
             
@@ -77,7 +77,7 @@ public class UserDAOImpl implements UserDAO {
                 temp = new UserBean(rs.getString(1),rs.getString(2),rs.getString(3), 
                         rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), 
                         rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11),
-                        rs.getString(12));
+                        rs.getString(12),rs.getString(13));
             }
                 return temp;
             
@@ -110,7 +110,8 @@ public class UserDAOImpl implements UserDAO {
             // WHERE some_column=some_value
             // Note: Notice the WHERE clause in the UPDATE syntax. The WHERE clause specifies which record or records that should be updated. If you omit the WHERE clause, all records will be updated!
             updateString = "UPDATE Profile_353.Users SET "
-                    + "frstname = '" + aUser.getFullName() + "', "
+                    + "frstname = '" + aUser.getFName() + "', "
+                    + "lastname = '" + aUser.getlName() + "', "
                     + "password = '" + aUser.getPassword()  + "', "                   
                     + "WHERE email = '" + aUser.getEmail() + "'";
             

@@ -11,7 +11,8 @@ package model;
 public class UserBean {
 
     // These correspond to the form elements
-    private String fullName;
+    private String fName;
+    private String lName;
     private String password;
     private String email;
     private String dob;
@@ -24,8 +25,9 @@ public class UserBean {
     private String sat;
     private String activities;
 
-    public UserBean(String fullName, String password, String email, String dob, String address, String intHob, String school, String gradDate, String gpa, String act, String sat, String activities) {
-        this.fullName = fullName;
+    public UserBean(String fName, String lName, String password, String email, String dob, String address, String intHob, String school, String gradDate, String gpa, String act, String sat, String activities) {
+        this.fName = fName;
+        this.lName = lName;
         this.password = password;
         this.email = email;
         this.dob = dob;
@@ -46,17 +48,17 @@ public class UserBean {
     }
 
     /**
-     * @return the fullName
+     * @return the fName
      */
-    public String getFullName() {
-        return fullName;
+    public String getFName() {
+        return fName;
     }
 
     /**
-     * @param fullName the firstName to set
+     * @param fName the fName to set
      */
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFName(String fName) {
+        this.fName = fName;
     }
 
   
@@ -212,6 +214,20 @@ public class UserBean {
      */
     public void setGradDate(String gradDate) {
         this.gradDate = gradDate;
+    }
+
+    /**
+     * @return the lName
+     */
+    public String getlName() {
+        return lName;
+    }
+
+    /**
+     * @param lName the lName to set
+     */
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     

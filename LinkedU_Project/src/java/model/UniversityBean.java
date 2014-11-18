@@ -36,6 +36,7 @@ public class UniversityBean {
         this.actRange = actRange;
         this.satRange = satRange;
         this.fullName = fullName;
+        this.affiliation = affiliation;
         this.email = email;
         this.password = password;
     }

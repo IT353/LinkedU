@@ -34,7 +34,10 @@
 
                     <div>   
                         <h:form>
-                            *Full Name: <h:inputText id="fullName" value="#{userController.theModel.fullName}">
+                            *First Name: <h:inputText id="fName" value="#{userController.theModel.fName}">
+                                <f:validateLength minimum="3" maximum="50" />
+                            </h:inputText> <br/><br/>
+                            *Last Name: <h:inputText id="lName" value="#{userController.theModel.lName}">
                                 <f:validateLength minimum="3" maximum="50" />
                             </h:inputText> <br/><br/>
                             *Email Address: <h:inputText id="email" value="#{userController.theModel.email}">

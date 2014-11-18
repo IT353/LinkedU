@@ -60,8 +60,8 @@ public class UserController {
 
     public String getResponse() {  
         String resultStr = "";
-        resultStr += "Hello " +theModel.getFullName() +
-                "</br></br>Info inserted in DB: </br>Full Name - "+ theModel.getFullName()+ 
+        resultStr += "Hello " +theModel.getFName() + theModel.getlName() +
+                "</br></br>Info inserted in DB: </br>Full Name - "+ theModel.getFName()+ 
                 "</br> Password - "+ theModel.getPassword()+ 
                 "</br> Email - "+ theModel.getEmail();
         response = resultStr;
@@ -108,7 +108,7 @@ public class UserController {
   
 
         BodyPart messageBodyPart = new MimeBodyPart();  
-        String htmlText = "<H1>Hello "+ theModel.getFullName()+ 
+        String htmlText = "<H1>Hello "+ theModel.getFName()+ theModel.getlName() +
                 ". Thank you for registering. Your username is: "+ theModel.getEmail() +
                 "Your password is: " + theModel.getPassword()+". ";  
         messageBodyPart.setContent(htmlText, "text/html");  
