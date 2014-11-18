@@ -10,16 +10,16 @@
             <h:form>
             <table border="0" align="right" style="background-color: #D8D8D8">
                 <tr>
-                    <th>Welcome, (Example name):</th>
-                    <td><h:commandLink action="loginController.viewNav()">My Profile</h:commandLink></td>
-                    <td>|</td>
-                    <td><h:commandLink action="updateController.updateNav()">Edit My Profile</h:commandLink></td>
-                    <td>|</td>
-                    <td><h:commandLink action="Messages.xhtml">Messages</h:commandLink></td>
-                    <td>|</td>
-                    <td><h:commandLink action="search.xhmtl">Search</h:commandLink></td>
-                    <td>|</td>
-                    <td><h:commandLink action="loginController.logout()">Logout</h:commandLink></td>              
+                    <th>Welcome, #{loginController.getUserEmail()}</th>
+                    <td style="text-align: center"><h:commandLink action="loginController.viewNav()">My Profile</h:commandLink></td>
+                    <td style="text-align: center">|</td>
+                    <td style="text-align: center"><h:commandLink action="updateController.updateNav()">Edit My Profile</h:commandLink></td>
+                    <td style="text-align: center">|</td>
+                    <td style="text-align: center"><h:commandLink action="Messages.xhtml">Messages</h:commandLink></td>
+                    <td style="text-align: center">|</td>
+                    <td style="text-align: center"><h:commandLink action="search.xhmtl">Search</h:commandLink></td>
+                    <td style="text-align: center">|</td>
+                    <td style="text-align: right"><h:commandLink action="#{loginController.logOut()}">Logout</h:commandLink></td>              
                 </tr>
             </table>
             </h:form>

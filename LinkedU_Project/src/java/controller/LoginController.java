@@ -62,12 +62,13 @@ public class LoginController {
         this.response = response;
     }
     
-    public void logOut() {
+    public String logOut() {
         setLog(0);
-  
-       FacesContext fc = FacesContext.getCurrentInstance();
-       ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) fc.getApplication().getNavigationHandler();
-       nav.performNavigation("index?faces-redirect=true");
+        this.theModel.setUserEmail(null);
+        this.theModel.setPassword(null);
+        this.theModel.setAccountType(null);
+        return "index.xhtml";
+       
     }
     
     public void logIn(AccountBean theModel) {
@@ -77,23 +78,23 @@ public class LoginController {
     
     public String validateLogin() {
         AccountDAO aAccountDAO = new AccountDAOImpl();   
-        ArrayList result = aAccountDAO.findAccount(getUserEmail(), getPassword()); 
+        ArrayList result = aAccountDAO.findAccount(userEmail, password); 
 
-        if(accountTrials.containsKey(getUserEmail()) && (Integer)accountTrials.get(getUserEmail()) >= 3) {
+        if(accountTrials.containsKey(userEmail) && (Integer)accountTrials.get(userEmail) >= 3) {
             response = "There has been too many attempts to log in on this account.The account has been disabled.";
-            return "login.xhtml";
+            return "index.xhtml";
         }
         else if(result.size() != 1){   
             
-            if(accountTrials.containsKey(getUserEmail())){
-                int trials = (Integer)accountTrials.get(getUserEmail());
+            if(accountTrials.containsKey(userEmail)){
+                int trials = (Integer)accountTrials.get(userEmail);
                 trials++;
-                accountTrials.remove(getUserEmail());
-                accountTrials.put(getUserEmail(), trials);
+                accountTrials.remove(userEmail);
+                accountTrials.put(userEmail, trials);
                 
             }
             else{
-                accountTrials.put(getUserEmail(), 1);
+                accountTrials.put(userEmail, 1);
             }
         }
             
@@ -105,7 +106,7 @@ public class LoginController {
         }
         else {
             response = "Failure to Login.  Incorrect username or password.";   
-            return "login.xhtml";
+            return "index.xhtml";
             }
     }
         
@@ -114,11 +115,17 @@ public class LoginController {
     public String logStatusIn(ComponentSystemEvent event) {
         String navi = null;
 
-        if (getLog() == 1) {
+        if (getLog() == 1 && theModel.getAccountType().equals("s")) {
 
             FacesContext fc = FacesContext.getCurrentInstance();
             ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) fc.getApplication().getNavigationHandler();
-            nav.performNavigation("home?faces-redirect=true");
+            nav.performNavigation("studentProfile?faces-redirect=true");
+        }
+        else if(getLog() == 1 && theModel.getAccountType().equals("u")) {
+
+            FacesContext fc = FacesContext.getCurrentInstance();
+            ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) fc.getApplication().getNavigationHandler();
+            nav.performNavigation("universityProfile?faces-redirect=true");
         }
         return navi;
     }
