@@ -112,6 +112,24 @@ body {  width: 95%;
         text-align:             left;  
 }
 
+.title a:link {
+    text-decoration: none;
+	color: white;
+}
+.title a:visited {
+    text-decoration: none;
+	color: white;
+}
+.title a:hover {
+    text-decoration: underline;
+	color: white;
+}
+.title a:active {
+    text-decoration: none;
+	color: #FFFFFF;	
+}
+
+
 .logControls {
     text-align: right;
     text-align: right;
