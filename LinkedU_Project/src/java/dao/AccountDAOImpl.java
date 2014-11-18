@@ -49,7 +49,7 @@ public class AccountDAOImpl implements AccountDAO {
         try {
             DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
             // if doing the above in Oracle: DBHelper.loadDriver("oracle.jdbc.driver.OracleDriver");
-            String myDB = "jdbc:derby://gfish.it.ilstu.edu:1527/kbandel_Fall2014_KKLM_LinkeduDB";
+            String myDB = "jdbc:derby://localhost:1527/kbandel_Fall2014_KKLM_LinkeduDB";
             // if doing the above in Oracle:  String myDB = "jdbc:oracle:thin:@oracle.itk.ilstu.edu:1521:ora478";
             DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
 
@@ -102,7 +102,7 @@ public class AccountDAOImpl implements AccountDAO {
 
         int rowCount = 0;
         try {
-            String myDB = "jdbc:derby://gfish.it.ilstu.edu:1527:1527/kbandel_Fall2014_KKLM_LinkeduDB";
+            String myDB = "jdbc:derby://localhost:1527/kbandel_Fall2014_KKLM_LinkeduDB";
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
             
             String insertString;
@@ -137,7 +137,7 @@ public class AccountDAOImpl implements AccountDAO {
         }
         int rowCount = 0;
         try {
-            String myDB = "jdbc:derby://gfish.it.ilstu.edu:1527/kbandel_Fall2014_KKLM_LinkeduDB";
+            String myDB = "jdbc:derby://localhost:1527/kbandel_Fall2014_KKLM_LinkeduDB";
             DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
 
             

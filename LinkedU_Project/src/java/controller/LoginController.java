@@ -105,7 +105,7 @@ public class LoginController {
         }
         else {
             response = "Failure to Login.  Incorrect username or password.";   
-            return "index.xhtml";
+            return "login.xhtml";
             }
     }
         

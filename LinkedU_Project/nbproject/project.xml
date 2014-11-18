@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
             <name>LinkedU_Project</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
+<<<<<<< HEAD
             <web-module-libraries>
                 <library dirs="200">
                     <file>${libs.primefaces.classpath}</file>
@@ -22,6 +23,9 @@
 =======
 >>>>>>> origin/master
             </web-module-libraries>
+=======
+            <web-module-libraries/>
+>>>>>>> parent of 74f74dc... templates
             <web-module-additional-libraries/>
             <source-roots>
                 <root id="src.dir" name="Source Packages"/>
