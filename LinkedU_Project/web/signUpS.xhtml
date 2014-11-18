@@ -1,16 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <!-- See content.xhtml for an explanation of how templating works in this application.
+            According to some explanations, this is the "template client." A better name might
+            be "consumer."
+    -->
+
     <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="#{resource['css:leoAppStyle.css']}" />
+        <title>
+            <ui:insert name="title">Facelets Templating Example</ui:insert>
+        </title>
     </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+
+    <div id="header">
+        <ui:insert name="header">
+            <ui:include src="/templates/header.xhtml"/>
+        </ui:insert>
+    </div>
+
+    <table width="100%">
+        <tr>
+            <td class="sidemenu" width="20%">
+                <!-- This demonstrates that the entire content region of the displayed
+                        page is controlled in this file which is why we titled this file,
+                        "content.xhtml." In this example the side menu is considered part
+                        of the content. Whether it is or should be is debatable, of course.
+                -->
+                <div id="sidemenu">
+                    <br />
+                    <ui:insert name="sidemenu">
+                        <h:form>
+                            <h:commandLink action="/home.xhtml" value="Home"></h:commandLink>
+                            <br />
+                            <B><h:outputText styleClass="selected" value="Student Sign Up" /></B>
+                            <br />
+                            <h:commandLink action="/universitySignUp.xhtml" value="University Sign Up"></h:commandLink>
+                            <br />
+                            <br />
+                        </h:form>
+                    </ui:insert>
+                </div>
+            </td>
+            <td width="85%">
+                <ui:insert name="content">
+                    <h2>Welcome to the Student Sign Up page!</h2>
+
+                    <div>   
+                        <h:form>
+                            *Full Name: <h:inputText id="fullName" value="#{userController.theModel.fullName}">
+                                <f:validateLength minimum="3" maximum="50" />
+                            </h:inputText> <br/><br/>
+                            *Email Address: <h:inputText id="email" value="#{userController.theModel.email}">
+                                <f:validateLength minimum="1" />
+                            </h:inputText> <br/><br/>
+                            *Password: <h:inputSecret id="password" value="#{userController.theModel.password}">
+                                <f:validateLength minimum="1"/>
+                            </h:inputSecret> <br/><br/>
+
+                            <hr></hr>
+
+                            <h3> About: </h3>
+                            *DOB: (MM/DD/YYYY) <h:inputText id="dob" value="#{userController.theModel.dob}">
+                                <f:validateLength minimum="10"/>
+                            </h:inputText> <br/><br/>
+                            *Permanent Address: (street city state, zip) <h:inputText id="address" value="#{userController.theModel.address}">
+                                <f:validateLength minimum="10" />
+                                <!-- Should I set up a validate for this formatting?-->
+                            </h:inputText> <br/><br/>
+                            Interests/Hobbies: <h:inputText id="intHob" value="#{userController.theModel.intHob}">
+                            </h:inputText> <br/><br/>
+
+                            <hr></hr>
+
+                            <h3> Education: </h3>
+                            *School: <h:inputText id="school" value="#{userController.theModel.school}">
+                                <f:validateLength minimum="1" />
+                            </h:inputText> <br/><br/>
+                            *Expected Graduation Date: (MM/YYYY) <h:inputText id="gradDate" value="#{userController.theModel.gradDate}">
+                                <f:validateLength minimum="7" />
+                            </h:inputText> <br/><br/>
+                            *GPA: <h:inputText id="gpa" value="#{userController.theModel.gpa}">
+                                <f:validateLength minimum="1" /> 
+                            </h:inputText> <br/><br/>
+                            ACT: <h:inputText id="act" value="#{userController.theModel.act}">
+                            </h:inputText> <br/><br/>
+                            SAT: <h:inputText id="sat" value="#{userController.theModel.sat}">
+                            </h:inputText> <br/><br/>
+                            School Activities (sports, clubs, etc.): <h:inputText id="activites" value="#{userController.theModel.activities}">
+                            </h:inputText> <br/><br/>
+                            <!--            <h:commandButton id="submitID" value="Submit" action="response.xhtml"/>-->
+                            <h:commandButton id="submitID" value="Create Profile" action="#{userController.createUser()}"/>
+                        </h:form>
+                    </div>  
+
+                </ui:insert>
+            </td>
+        </tr>
+    </table>
+
+    <div id="footer">
+        <ui:insert name="footer">
+            <ui:include src="/templates/footer.xhtml"/>
+        </ui:insert>
+    </div>
+
 </html>
