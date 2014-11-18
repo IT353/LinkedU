@@ -112,7 +112,46 @@ body {  width: 95%;
         text-align:             left;  
 }
 
+.title a:link {
+    text-decoration: none;
+	color: white;
+}
+.title a:visited {
+    text-decoration: none;
+	color: white;
+}
+.title a:hover {
+    text-decoration: underline;
+	color: white;
+}
+.title a:active {
+    text-decoration: none;
+	color: #FFFFFF;	
+}
+
 .logControls {
-    text-align: right;
-    text-align: right;
+    text-align: left;
+}
+
+.logControls table{
+    width:100%;
+}
+
+.logControls a:link {
+    text-decoration: underline;
+	color: #003366;
+}
+.logControls a:visited {
+    text-decoration: none;
+	color: #003366;
+}
+.logControls a:hover {
+    text-decoration: none;
+	color: white;
+	background-color: #003366;
+}
+.logControls a:active {
+    text-decoration: underline;
+	color: #FFFFFF;
+	background-color: #003366;	
 }
