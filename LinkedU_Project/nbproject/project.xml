@@ -6,6 +6,7 @@
             <name>LinkedU_Project</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <web-module-libraries>
                 <library dirs="200">
                     <file>${libs.primefaces.classpath}</file>
@@ -23,6 +24,9 @@
 =======
 >>>>>>> origin/master
             </web-module-libraries>
+=======
+            <web-module-libraries/>
+>>>>>>> parent of 74f74dc... templates
 =======
             <web-module-libraries/>
 >>>>>>> parent of 74f74dc... templates
