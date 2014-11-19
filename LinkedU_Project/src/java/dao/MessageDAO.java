@@ -14,6 +14,7 @@ import model.MessageBean;
  * @author ljpetr2
  */
 public interface MessageDAO {
-    public ArrayList findAll();
+    public ArrayList findAll(String aEmail);
     public int createMessage(MessageBean aMessage);
+    public int readMessage(MessageBean pro);
 }

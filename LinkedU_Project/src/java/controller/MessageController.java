@@ -21,6 +21,7 @@ import model.MessageBean;
 @SessionScoped
 public class MessageController {
     private MessageBean theModel;
+    private String response;
     private List<MessageBean> messages;
     
     public MessageController(){
@@ -56,11 +57,74 @@ public class MessageController {
     }
     
     
-    public List<MessageBean> retrieveMessages() {
-            MessageDAO aMessagetDAO = new MessageDAOImpl();    
-            this.setMessages((List<MessageBean>) aMessageDAO.findAll());           
+    public List<MessageBean> retrieveMessages(String aEmail) {
+            MessageDAO aMessageDAO = new MessageDAOImpl();    
+            this.setMessages((List<MessageBean>) aMessageDAO.findAll(aEmail));           
  
             return getMessages(); 
+    }
+    
+    public String createMessage(){
+        MessageDAO aAccountDAO = new MessageDAOImpl();    
+            int rowCount = aAccountDAO.createMessage(theModel); 
+        
+            if (rowCount == 1 ) {
+                setResponse("Message sent!");
+            }
+            else
+                setResponse("Failure to send");
+            
+            return "messagesCompose.xhtml";
+    }
+    
+    public String navigate(){
+        return "messages.xhtml";
+    }
+    
+    public String replyMessage(String sender){
+        theModel.setSenderEmail(theModel.getReceiverEmail());
+        theModel.setReceiverEmail(sender);
+        theModel.setMessage("");
+        theModel.setSubject("");
+        
+        return "messagesCompose.xhtml";
+        
+    }
+    
+    public String composeMessage(String receiver){
+        theModel.setSenderEmail(receiver);
+        theModel.setReceiverEmail("");
+        theModel.setMessage("");
+        theModel.setSubject("");
+        
+        return "messagesCompose.xhtml";       
+    }
+    
+    public String viewMessage(MessageBean message){
+            MessageDAO aAccountDAO = new MessageDAOImpl();    
+            int rowCount = aAccountDAO.readMessage(message); 
+
+            if (rowCount == 1 ) {
+                theModel = message;
+                return "messagesRead.xhtml";
+            }
+            else {
+                return "messages.xhtml";
+            }    
+    }
+
+    /**
+     * @return the response
+     */
+    public String getResponse() {
+        return response;
+    }
+
+    /**
+     * @param response the response to set
+     */
+    public void setResponse(String response) {
+        this.response = response;
     }
     
 }
