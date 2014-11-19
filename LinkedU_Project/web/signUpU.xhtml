@@ -40,9 +40,24 @@
                                         <f:validateLength minimum="1"/>
                                     </h:inputText> <br/><br/>
                                     <!-- Validate that there is not one already created for this school-->
-                                    *Address: (street city state, zip) <h:inputText id="address" value="#{universityController.theModel.address}">
-                                        <f:validateLength minimum="10" />
+                                    *Address: <h:inputText id="address" value="#{universityController.theModel.address}">
+                                        <f:validateLength minimum="11" />
+                                        </h:inputText> <br/><br/>
                                         <!-- Should I set up a validate for this formatting?-->
+                                    *City: <h:inputText id="city" value="#{universityController.theModel.city}">
+                                        <f:validateLength minimum="1" />
+                                    </h:inputText> <br/><br/>
+                                    *State: <h:inputText id="state" value="#{universityController.theModel.state}">
+                                        <f:validateLength minimum="2" />
+                                    </h:inputText> <br/><br/>
+                                    *Phone: <h:inputText id="phone" value="#{universityController.theModel.phone}">
+                                        <f:validateLength minimum="1" />
+                                    </h:inputText> <br/><br/>
+                                    *Type (Public or Private): <h:inputText id="type" value="#{universityController.theModel.type}">
+                                        <f:validateLength minimum="10" />
+                                    </h:inputText> <br/><br/>
+                                    *About the University: <h:inputText id="about" value="#{universityController.theModel.about}">
+                                        <f:validateLength minimum="1" />
                                     </h:inputText> <br/><br/>
                                     *Number of Students: <h:inputText id="stuNum" value="#{universityController.theModel.stuNum}">
                                         <f:validateLength minimum="1" /> 
@@ -64,6 +79,9 @@
                                         <f:validateLength minimum="1" /> 
                                     </h:inputText> <br/><br/>
                                     *SAT Range: <h:inputText id="satRange" value="#{universityController.theModel.satRange}">
+                                        <f:validateLength minimum="1" /> 
+                                    </h:inputText> <br/><br/>
+                                    *Extra Application Requirements: <h:inputText id="applyExtra" value="#{universityController.theModel.applyExtra}">
                                         <f:validateLength minimum="1" /> 
                                     </h:inputText> <br/><br/>
 

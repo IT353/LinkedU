@@ -13,28 +13,40 @@ public class UniversityBean {
     // These correspond to the form elements
     private String unName;
     private String address;
+    private String city;
+    private String state;
+    private String phone;
+    private String type;
+    private String about;
     private String stuNum;
     private String inTuition;
     private String outTuition;
     private String gpaRange;
     private String actRange;
     private String satRange;
+    private String applyExtra;
     private String fullName;
     private String affiliation;
     private String email;
     private String password;
 
 
-    public UniversityBean(String unName, String address, String stuNum, String inTuition, String outTuition, String gpaRange, String actRange, 
-            String satRange, String fullName, String affiliation, String email, String password) {
+    public UniversityBean(String unName, String address, String city, String state, String phone, 
+            String about, String stuNum, String inTuition, String outTuition, String gpaRange, String actRange, 
+            String satRange, String applyExtra, String fullName, String affiliation, String email, String password) {
         this.unName = unName;
         this.address = address;
+        this.city = city;
+        this.state = state;
+        this.phone = phone;
+        this.about = about;
         this.stuNum = stuNum;
         this.inTuition = inTuition;
         this.outTuition = outTuition;
         this.gpaRange = gpaRange;
         this.actRange = actRange;
         this.satRange = satRange;
+        this.applyExtra = applyExtra;
         this.fullName = fullName;
         this.affiliation = affiliation;
         this.email = email;
@@ -211,6 +223,90 @@ public class UniversityBean {
      */
     public void setAffiliation(String affiliation) {
         this.affiliation = affiliation;
+    }
+
+    /**
+     * @return the city
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * @param city the city to set
+     */
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    /**
+     * @return the state
+     */
+    public String getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * @return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * @return the about
+     */
+    public String getAbout() {
+        return about;
+    }
+
+    /**
+     * @param about the about to set
+     */
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    /**
+     * @return the applyExtra
+     */
+    public String getApplyExtra() {
+        return applyExtra;
+    }
+
+    /**
+     * @param applyExtra the applyExtra to set
+     */
+    public void setApplyExtra(String applyExtra) {
+        this.applyExtra = applyExtra;
     }
 
 
