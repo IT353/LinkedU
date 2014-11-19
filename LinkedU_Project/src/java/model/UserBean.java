@@ -16,24 +16,34 @@ public class UserBean {
     private String password;
     private String email;
     private String dob;
-    private String address;
+    private String city;
+    private String state;
+    private String about;
     private String intHob;
-    private String school;
+    private String uniChoices;
+    private String majChoices;
+    private String highSchool;
     private String gradDate;
     private String gpa;
     private String act;
     private String sat;
     private String activities;
 
-    public UserBean(String fName, String lName, String password, String email, String dob, String address, String intHob, String school, String gradDate, String gpa, String act, String sat, String activities) {
+    public UserBean(String fName, String lName, String password, String email, String dob, String city, 
+            String state, String about, String intHob, String uniChoices, String majChoices, 
+            String highSchool, String gradDate, String gpa, String act, String sat, String activities) {
         this.fName = fName;
         this.lName = lName;
         this.password = password;
         this.email = email;
         this.dob = dob;
-        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.about = about;
         this.intHob = intHob;
-        this.school = school;
+        this.uniChoices = uniChoices;
+        this.majChoices = majChoices;
+        this.highSchool = highSchool;
         this.gradDate = gradDate;
         this.gpa = gpa;
         this.act = act;
@@ -47,21 +57,6 @@ public class UserBean {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     * @return the fName
-     */
-    public String getFName() {
-        return fName;
-    }
-
-    /**
-     * @param fName the fName to set
-     */
-    public void setFName(String fName) {
-        this.fName = fName;
-    }
-
-  
     /**
      * @return the password
      */
@@ -105,17 +100,17 @@ public class UserBean {
     }
 
     /**
-     * @return the school
+     * @return the highSchool
      */
-    public String getSchool() {
-        return school;
+    public String getHighSchool() {
+        return highSchool;
     }
 
     /**
-     * @param school the school to set
+     * @param highSchool the highSchool to set
      */
-    public void setSchool(String school) {
-        this.school = school;
+    public void setHighSchool(String highSchool) {
+        this.highSchool = highSchool;
     }
 
     /**
@@ -161,17 +156,17 @@ public class UserBean {
     }
 
     /**
-     * @return the address
+     * @return the city
      */
-    public String getAddress() {
-        return address;
+    public String getCity() {
+        return city;
     }
 
     /**
-     * @param address the address to set
+     * @param city the city to set
      */
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress(String city) {
+        this.city = city;
     }
 
     /**
@@ -228,6 +223,76 @@ public class UserBean {
      */
     public void setlName(String lName) {
         this.lName = lName;
+    }
+
+    /**
+     * @return the state
+     */
+    public String getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * @return the about
+     */
+    public String getAbout() {
+        return about;
+    }
+
+    /**
+     * @param about the about to set
+     */
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    /**
+     * @return the uniChoices
+     */
+    public String getUniChoices() {
+        return uniChoices;
+    }
+
+    /**
+     * @param uniChoices the uniChoices to set
+     */
+    public void setUniChoices(String uniChoices) {
+        this.uniChoices = uniChoices;
+    }
+
+    /**
+     * @return the majChoices
+     */
+    public String getMajChoices() {
+        return majChoices;
+    }
+
+    /**
+     * @param majChoices the majChoices to set
+     */
+    public void setMajChoices(String majChoices) {
+        this.majChoices = majChoices;
+    }
+
+    /**
+     * @return the fName
+     */
+    public String getfName() {
+        return fName;
+    }
+
+    /**
+     * @param fName the fName to set
+     */
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
     

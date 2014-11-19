@@ -56,9 +56,9 @@
                                     *Type (Public or Private): <h:inputText id="type" value="#{universityController.theModel.type}">
                                         <f:validateLength minimum="10" />
                                     </h:inputText> <br/><br/>
-                                    *About the University: <h:inputText id="about" value="#{universityController.theModel.about}">
+                                    *About the University: <br/><br/><h:inputTextarea cols="40" rows="4" id="about" value="#{universityController.theModel.about}">
                                         <f:validateLength minimum="1" />
-                                    </h:inputText> <br/><br/>
+                                    </h:inputTextarea> <br/><br/>
                                     *Number of Students: <h:inputText id="stuNum" value="#{universityController.theModel.stuNum}">
                                         <f:validateLength minimum="1" /> 
                                     </h:inputText> <br/><br/>
@@ -81,9 +81,9 @@
                                     *SAT Range: <h:inputText id="satRange" value="#{universityController.theModel.satRange}">
                                         <f:validateLength minimum="1" /> 
                                     </h:inputText> <br/><br/>
-                                    *Extra Application Requirements: <h:inputText id="applyExtra" value="#{universityController.theModel.applyExtra}">
+                                    *Extra Application Requirements: <br/><br/><h:inputTextarea cols="40" rows="4" id="applyExtra" value="#{universityController.theModel.applyExtra}">
                                         <f:validateLength minimum="1" /> 
-                                    </h:inputText> <br/><br/>
+                                    </h:inputTextarea> <br/><br/>
 
                                     <hr></hr>
 
