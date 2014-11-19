@@ -1,91 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Ignored</title>
+    </h:head>
+    
+    <h:body style="padding-left: 100px">
+        <ui:composition template="/templates/content.xhtml">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+            <ui:define name="content"> 
+                <h1>LinkedU Student sign up</h1>
 
-    <!-- See content.xhtml for an explanation of how templating works in this application.
-            According to some explanations, this is the "template client." A better name might
-            be "consumer."
-    -->
-
-    <head>
-        <title>
-            <ui:insert name="title">Facelets Templating Example</ui:insert>
-        </title>
-    </head>
-
-<ui:composition template="/templates/content.xhtml">
-    <ui:define name="content"> 
-
-    <table width="100%">
-        <tr>
-            <td class="sidemenu" width="20%">
-                <!-- This demonstrates that the entire content region of the displayed
-                        page is controlled in this file which is why we titled this file,
-                        "content.xhtml." In this example the side menu is considered part
-                        of the content. Whether it is or should be is debatable, of course.
-                -->
-            </td>
-            <td width="85%">
-                    <h2>Welcome to the Student Sign Up page!</h2>
-
-                    <div>   
-                        <h:form>
-                            *First Name: <h:inputText id="fName" value="#{userController.theModel.fName}">
-                                <f:validateLength minimum="3" maximum="50" />
-                            </h:inputText> <br/><br/>
-                            *Last Name: <h:inputText id="lName" value="#{userController.theModel.lName}">
-                                <f:validateLength minimum="3" maximum="50" />
-                            </h:inputText> <br/><br/>
-                            *Email Address: <h:inputText id="email" value="#{userController.theModel.email}">
-                                <f:validateLength minimum="1" />
-                            </h:inputText> <br/><br/>
-                            *Password: <h:inputSecret id="password" value="#{userController.theModel.password}">
-                                <f:validateLength minimum="1"/>
-                            </h:inputSecret> <br/><br/>
-
-                            <hr></hr>
-
-                            <h3> About: </h3>
-                            *DOB: (MM/DD/YYYY) <h:inputText id="dob" value="#{userController.theModel.dob}">
-                                <f:validateLength minimum="10"/>
-                            </h:inputText> <br/><br/>
-                            *Permanent Address: (street city state, zip) <h:inputText id="address" value="#{userController.theModel.address}">
-                                <f:validateLength minimum="10" />
-                                <!-- Should I set up a validate for this formatting?-->
-                            </h:inputText> <br/><br/>
-                            Interests/Hobbies: <h:inputText id="intHob" value="#{userController.theModel.intHob}">
-                            </h:inputText> <br/><br/>
-
-                            <hr></hr>
-
-                            <h3> Education: </h3>
-                            *School: <h:inputText id="school" value="#{userController.theModel.school}">
-                                <f:validateLength minimum="1" />
-                            </h:inputText> <br/><br/>
-                            *Expected Graduation Date: (MM/YYYY) <h:inputText id="gradDate" value="#{userController.theModel.gradDate}">
-                                <f:validateLength minimum="7" />
-                            </h:inputText> <br/><br/>
-                            *GPA: <h:inputText id="gpa" value="#{userController.theModel.gpa}">
-                                <f:validateLength minimum="1" /> 
-                            </h:inputText> <br/><br/>
-                            ACT: <h:inputText id="act" value="#{userController.theModel.act}">
-                            </h:inputText> <br/><br/>
-                            SAT: <h:inputText id="sat" value="#{userController.theModel.sat}">
-                            </h:inputText> <br/><br/>
-                            School Activities (sports, clubs, etc.): <h:inputText id="activites" value="#{userController.theModel.activities}">
-                            </h:inputText> <br/><br/>
-                            <!--            <h:commandButton id="submitID" value="Submit" action="response.xhtml"/>-->
-                            <h:commandButton id="submitID" value="Create Profile" action="#{userController.createUser()}"/>
-                        </h:form>
-                    </div>  
-            </td>
-        </tr>
-    </table>
-    </ui:define>
- </ui:composition>
-
+                <h:form enctype="multipart/form-data">  
+                    <h:panelGrid columns="2">
+                        Name: <h:inputText value="#{studentBeanController.firstName}"></h:inputText><br />
+                      
+                        Email: <h:inputText value="#{studentBeanController.email}"></h:inputText><br />
+                        Password<h:inputSecret value="#{studentBeanController.password}"></h:inputSecret><br />
+                        High School  <h:inputText value="#{studentBeanController.highSchool}"></h:inputText><br />
+                        City <h:inputText value="#{studentBeanController.city}"></h:inputText><br />
+                          State  <h:inputText value="#{studentBeanController.state}"></h:inputText><br />
+                        
+                        GPA: <h:inputText value="#{studentBeanController.gpa}"></h:inputText><br />
+                        ACT:  <h:inputText value="#{studentBeanController.act}"></h:inputText><br />
+                        SAT:  <h:inputText value="#{studentBeanController.sat}"></h:inputText><br />
+                        About:<h:inputTextarea value="#{studentBeanController.about}"></h:inputTextarea>
+                       Activities:<h:inputTextarea value="#{studentBeanController.activities}"></h:inputTextarea>
+                        Majors of Choice:<h:inputTextarea value="#{studentBeanController.majorsOfChoice}"></h:inputTextarea>
+                        Universities of Choice: <h:inputTextarea value="#{studentBeanController.univOfChoice}"></h:inputTextarea>
+                        Essay:<h:inputFile value="#{studentBeanController.essay}"> </h:inputFile>  <br />
+                        <!-- upload pictures-->
+                        Picture:<h:inputFile value="#{studentBeanController.image}"> </h:inputFile>  
+                        <h:commandButton style=" color:#003366; height:40px;width: 160px" action="#{studentBeanController.upload()}" value="Save posting">   </h:commandButton><br /> <br /><br />
+                        <h:commandButton style=" color:#003366; height:40px;width: 160px" action="#{studentBeanController.displayStudent()}" value="display posting"/>
+                        <!--     <h:inputTextarea id="textArea"
+                        rows="20" cols="60"
+                       value="{studentBeanController.essayForPosting}" /> <br />-->
+                        <!--   <h:commandButton style ="height: 30px; width: 160px;" action="{studentBeanController.displayStudent()}" value="Save and display posting">  
+                         
+                   </h:commandButton>-->
+                    </h:panelGrid>
+                </h:form>  
+            </ui:define>
+        </ui:composition>
+    </h:body>
 </html>

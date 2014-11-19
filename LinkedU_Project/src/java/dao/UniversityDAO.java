@@ -5,7 +5,6 @@
 package dao;
 
 import model.UniversityBean;
-import model.UserBean;
 
 /**
  *

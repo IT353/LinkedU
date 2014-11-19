@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 
   <ui:composition template="/templates/contentIn.xhtml">
@@ -12,7 +13,30 @@
         
         <div class="indent">
                           
-      <h3> Test  </h3>
+      <h:form >  
+           
+            <p:graphicImage value="#{studentBean.imageForPosting}" alt="Image missing"></p:graphicImage> <br /><br />
+
+            <h3>Name:  </h3>          <h:outputText style ="font-size: larger " value="#{studentBean.firstName}"></h:outputText>
+            <h3>City: </h3> <h:outputText style ="font-size: large" value="#{studentBean.city}"></h:outputText><br /><br />     
+            <h3>GPA:  </h3> <h:outputText style ="font-size: large" value="#{studentBean.gpa}"></h:outputText><br /><br />        
+            <h3>ACT:  </h3> <h:outputText style ="font-size: large" value="#{studentBean.act}"></h:outputText><br /><br />        
+            <h3>SAT:  </h3> <h:outputText style ="font-size: large" value="#{studentBean.sat}"></h:outputText><br /><br />        
+
+
+
+            <h3>HighSchool:   </h3> <h:outputText style ="font-size: large" value="#{studentBean.highSchool}"></h:outputText><br /><br />        
+            <h3>About:  </h3> <h:outputText style ="font-size: large" value="#{studentBean.about}"></h:outputText><br /><br />   
+            <h3>Activities  </h3> <h:outputText style ="font-size: large" value="#{studentBean.activities}"></h:outputText><br /><br />   
+
+            <h3>Essay</h3><h:inputTextarea id="textArea"
+                                           rows="20" cols="60"
+                                           value="#{studentBean.essayForPosting}" /> <br />
+
+
+
+
+        </h:form> 
      
       </div>
     </ui:define>

@@ -57,7 +57,7 @@ public class MessageController {
     
     
     public List<MessageBean> retrieveMessages() {
-            MessageDAO aMessagetDAO = new MessageDAOImpl();    
+            MessageDAO aMessageDAO = new MessageDAOImpl();    
             this.setMessages((List<MessageBean>) aMessageDAO.findAll());           
  
             return getMessages(); 

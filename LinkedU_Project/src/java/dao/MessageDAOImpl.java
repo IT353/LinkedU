@@ -15,12 +15,13 @@ import model.MessageBean;
  */
 public class MessageDAOImpl implements MessageDAO {
     public ArrayList findAll(){
-        
+        ArrayList empty  = new ArrayList(3);
+        return empty;
     }
     
     
     public int createMessage(MessageBean aMessage){
-        
+        return 0;
     }
     
 }
